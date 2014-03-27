@@ -24,9 +24,14 @@ removing trailing bytes doesn't work, we will end up getting
 
 instead, we resort to padding with `=` so we get the gclid to a multiple of 4 before decoding.
 
+## install
+
+    pip install gclid-timestamp-decoder
+
 ## usage
 
-see `decode.py`. 
+    from gclid_timestamp_decoder.decode import get_timestamp_from_gclid
+    get_timestamp_from_gclid("some gclid id")
 
 ## references
 
