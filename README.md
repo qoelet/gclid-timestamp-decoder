@@ -18,11 +18,15 @@ this generates example_pb2.py in the specified destination.
 
 ## additional presteps for base64 decode
 
-removing trailing bytes doesn't work, we will end up getting 
+removing trailing bytes doesn't work, we will end up getting
 
     google.protobuf.message.DecodeError: Truncated message.
 
 instead, we resort to padding with `=` so we get the gclid to a multiple of 4 before decoding.
+
+## requires
+
+- [Protocol Buffers 2.6](https://github.com/google/protobuf/releases/tag/v2.6.0)
 
 ## install
 
@@ -30,8 +34,10 @@ instead, we resort to padding with `=` so we get the gclid to a multiple of 4 be
 
 ## usage
 
-    from gclid_timestamp_decoder.decode import get_timestamp_from_gclid
-    get_timestamp_from_gclid("some gclid id")
+    >>> from gclid_timestamp_decoder.decode import get_timestamp_from_gclid
+    >>> get_timestamp_from_gclid("CKSDxc_qhLkCFQyk4AodO24Arg")
+    '2013-08-17 23:50:17'
+
 
 ## references
 
@@ -45,7 +51,7 @@ instead, we resort to padding with `=` so we get the gclid to a multiple of 4 be
 
 ## author
 
-Contact [kenny@northpole.sg](mailto:kenny@northpole.sg)
+Contact [kenny@machinesung.com](mailto:kenny@machinesung.com)
 
 [1]: http://blog.deedpolloffice.com/articles/decoding-gclid-parameter
 [2]: https://developers.google.com/protocol-buffers/docs/overview
